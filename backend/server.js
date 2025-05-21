@@ -3,6 +3,10 @@ import cors from "cors";
 import morgan from "morgan";
 import connectDB from "./config/database.js";
 import assetRoutes from "./routes/assetRoutes.js";
+import inventoryRoutes from "./routes/inventoryRoutes.js";
+import roomRoutes from "./routes/roomRoutes.js";
+import floorRoutes from "./routes/floorRoutes.js";
+import branchRoutes from "./routes/branchRoutes.js";
 
 // Initialize express app
 const app = express();
@@ -36,6 +40,10 @@ app.use(morgan("dev"));
 
 // Routes
 app.use("/api/assets", assetRoutes);
+app.use("/api/inventory", inventoryRoutes);
+app.use("/api/rooms", roomRoutes);
+app.use("/api/floors", floorRoutes);
+app.use("/api/branches", branchRoutes);
 
 // Initialize server
 startServer();
